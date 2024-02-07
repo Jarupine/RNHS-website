@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rosales National High School - SHS</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="icon" href="RNHS-LOGO.png" type="image/icon type">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background-image: url('BACKGROUND.jpg');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            background-repeat: no-repeat;
+            color: white;
+            overflow-y: scroll;
+        }
+
+        header {
+            background-color: #2B6CB3;
+            padding: 8px;
+            color: white;
+            text-align: center;
+            position: relative;
+            z-index: 2;
+        }
+
+        nav {
+            background-color: #2B6CB3;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px;
+            position: relative;
+            z-index: 3;
+        }
+
+        nav ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: white;
+            font-weight: bold;
+            margin: 0 10px;
+        }
+
+        .logout-container {
+            margin-left: auto;
+            padding-left: 50px;
+        }
+
+        .logout-container a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .logout-container a:hover {
+            text-decoration: underline;
+        }
+
+        .hamburger {
+            display: none;
+            cursor: pointer;
+            order: 1;
+            position: absolute;
+            animation: fadeInDown 0.5s ease-out;
+        }
+
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @media only screen and (max-width: 768px) {
+            .hamburger {
+                display: block;
+                order: 0;
+                left: 0;
+            }
+
+            nav ul {
+                display: none;
+                flex-direction: column;
+                background-color: #2B6CB3;
+                position: absolute;
+                top: 60px;
+                left: 0;
+                width: 100%;
+                text-align: center;
+            }
+
+            nav ul.show {
+                display: flex;
+            }
+        }
+
+        .main-content {
+            text-align: justify;
+            margin: 50px;
+            background-color: rgba(0, 0, 0, 0.5);
+            border-radius: 8px;
+            padding: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .main-content-wrapper {
+            opacity: 0;
+            animation: fadeInUp 1s ease-in-out forwards;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .main-picture {
+            max-width: 100%;
+            height: auto;
+            width: 200px;
+        }
+
+        .image-container {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 20px;
+        }
+
+        .main-content img {
+            max-width: 30%;
+            border-radius: 8px;
+            margin-bottom: 10px;
+            animation: fadeInImage 1s ease-in-out;
+        }
+
+        @keyframes fadeInImage {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        .map-container {
+            margin-top: 20px;
+        }
+
+        .facility-staff-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            margin-top: 20px;
+        }
+
+        .facility-staff-card {
+            width: 30%;
+            margin: 10px;
+            padding: 10px;
+            background-color: rgba(255, 255, 255, 0.8);
+            border-radius: 8px;
+            cursor: pointer;
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .facility-staff-card:hover {
+            transform: scale(1.05);
+        }
+
+        .facility-staff-card img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+            margin-bottom: 10px;
+        }
+
+        #facilityStaffModal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.7);
+            align-items: center;
+            justify-content: center;
+        }
+
+        #facilityStaffModal .modal-content {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+        }
+
+        .exit-button {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            color: #000;
+            cursor: pointer;
+        }
+
+        footer {
+            background-color: #2B6CB3;
+            color: white;
+            text-align: center;
+            padding: 10px;
+            width: 100%;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="hamburger" onclick="toggleMenu()">
+            <i class="fas fa-bars"></i>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="acuar.html">Home</a></li>
+                <li><a href="About Us.html">About Us</a></li>
+                <li><a href="Events.html">Events</a></li>
+                <li><a href="News.html">News</a></li>
+                <li><a href="Strands.html">Strands</a></li>
+                <li><a href="facilities.html">Facilities and Staffs</a></li>
+                <li><a href="web developer.html">Web Developer</a></li>
+            </ul>
+            <div class="logout-container">
+                <a href="index.html">Log Out</a>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <div class="main-content-wrapper">
+            <div class="main-content">
+                <img src="RNHS-LOGO.png" alt="Event Image" class="main-picture">
+                <br>
+                <br>
+                <h1><b>ROSALES NATIONAL HIGH SCHOOL FACULTIES</b></h1>
+                <br>
+                <img src="faculty.jpg">
+                <h4>SENIOR HIGH FACULTY</h4>
+                <br>
+                <img src="PRINCIPAL-PICTURE.png">
+                <h4>PRINICPAL IV</h4>
+                <br>
+               
+            </div>
+        </div>
+
+        <h1><b>Facilities and Staffs</b></h1>
+        <div class="facility-staff-container">
+            <div class="facility-staff-card" onclick="showFacilityStaffModal('Facility 1', 'Facility 1 Description', 'facility1.jpg')">
+                <img src="facilits.jpg" alt="Facility 1">
+                <h5>Facility 1</h5>
+            </div>
+            <div class="facility-staff-card" onclick="showFacilityStaffModal('Facility 2', 'Facility 2 Description', 'facility2.jpg')">
+                <img src="03.jpg" alt="Facility 2">
+                <h5>Facility 2</h5>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p>Copyright ©️ 2024 All Rights Reserved By Jaru Pine Acuar</p>
+        <p><span style="font-size: 0.8em;"> jarupine@gmail.com</span></p>
+    </footer>
+
+    <div id="facilityStaffModal">
+        <div class="modal-content">
+            <span class="exit-button" onclick="hideFacilityStaffModal()">X</span>
+            <img id="facilityStaffImage" src="" alt="Facility or Staff Image" style="max-width: 100%;">
+            <h2 id="facilityStaffTitle"></h2>
+            <p id="facilityStaffDescription"></p>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+
+    <script>
+        function toggleMenu() {
+            var navUl = document.querySelector('nav ul');
+            navUl.classList.toggle('show');
+        }
+
+        function showFacilityStaffModal(title, description, imagePath) {
+            var modal = document.getElementById('facilityStaffModal');
+            var modalImage = document.getElementById('facilityStaffImage');
+            var modalTitle = document.getElementById('facilityStaffTitle');
+            var modalDescription = document.getElementById('facilityStaffDescription');
+
+            modalImage.src = imagePath;
+            modalTitle.innerText = title;
+            modalDescription.innerText = description;
+
+            modal.style.display = 'flex';
+        }
+
+        function hideFacilityStaffModal() {
+            var modal = document.getElementById('facilityStaffModal');
+            modal.style.display = 'none';
+        }
+    </script>
+
+</body>
+
+</html>

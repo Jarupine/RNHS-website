@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rosales National High School - SHS</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="icon" href="RNHS-LOGO.png" type="image/icon type">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background-image: url('BACKGROUND.jpg');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            background-repeat: no-repeat;
+            color: white;
+            overflow-y: scroll;
+        }
+
+        header {
+            background-color: #2B6CB3;
+            padding: 8px;
+            color: white;
+            text-align: center;
+            position: relative;
+            z-index: 2;
+        }
+
+        nav {
+            background-color: #2B6CB3;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px;
+            position: relative;
+            z-index: 3;
+        }
+
+        nav ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: white;
+            font-weight: bold;
+            margin: 0 10px;
+        }
+
+        .logout-container {
+            margin-left: auto;
+            padding-left: 50px;
+        }
+
+        .logout-container a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .logout-container a:hover {
+            text-decoration: underline;
+        }
+
+        .hamburger {
+            display: none;
+            cursor: pointer;
+            order: 1;
+            position: absolute;
+            animation: fadeInDown 0.5s ease-out;
+        }
+
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @media only screen and (max-width: 768px) {
+            .hamburger {
+                display: block;
+                order: 0;
+                left: 0;
+            }
+
+            nav ul {
+                display: none;
+                flex-direction: column;
+                background-color: #2B6CB3;
+                position: absolute;
+                top: 60px;
+                left: 0;
+                width: 100%;
+                text-align: center;
+            }
+
+            nav ul.show {
+                display: flex;
+            }
+        }
+
+        .main-content {
+            text-align: justify;
+            margin: 50px;
+            background-color: rgba(0, 0, 0, 0.5);
+            border-radius: 8px;
+            padding: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .main-content-wrapper {
+            opacity: 0;
+            animation: fadeInUp 1s ease-in-out forwards;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .main-picture {
+            max-width: 100%;
+            height: auto;
+            width: 200px;
+        }
+
+        .image-container {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 20px;
+        }
+
+        .main-content img {
+            max-width: 30%;
+            border-radius: 8px;
+            margin-bottom: 10px;
+            animation: fadeInImage 1s ease-in-out;
+        }
+
+        @keyframes fadeInImage {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        .map-container {
+            margin-top: 20px;
+        }
+
+        footer {
+            background-color: #2B6CB3;
+            color: white;
+            text-align: center;
+            padding: 10px;
+            width: 100%;
+        }
+
+        /* Additional styles for logos */
+        .logo-container {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 20px;
+        }
+
+        .strand-logo {
+            max-width: 100px;
+            height: auto;
+            cursor: pointer;
+        }
+
+        #logoModal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.7);
+            align-items: center;
+            justify-content: center;
+        }
+
+        #logoModal img {
+            max-width: 80%;
+            max-height: 80%;
+            border-radius: 8px;
+        }
+
+        .exit-button {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            color: white;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="hamburger" onclick="toggleMenu()">
+            <i class="fas fa-bars"></i>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="acuar.html">Home</a></li>
+                <li><a href="About Us.html">About Us</a></li>
+                <li><a href="Events.html">Events</a></li>
+                <li><a href="News.html">News</a></li>
+                <li><a href="Strands.html">Strands</a></li>
+                <li><a href="facilities.html">Facilities and Staffs</a></li>
+                <li><a href="web developer.html">Web Developer</a></li>
+            </ul>
+            <div class="logout-container">
+                <a href="index.html">Log Out</a>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <div class="main-content-wrapper">
+            <div class="main-content">
+                <img src="RNHS-LOGO.png" alt="Event Image" class="main-picture">
+                <br>
+                <br>
+                <h1><b>ABM STRAND</b></h1>
+                <img src="ABM-LOGO.png">
+                <br>
+                <h1><b>WHAT IS ABM STRAND?</b></h1>
+                <h5>
+                <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;The Accountancy, Business and Management (ABM) strand marries creativity, mathematical application, and business sense to prepare the best business professionals of tomorrow. Taking ABM subjects in senior high school will introduce students to the concepts of financial management, business management, corporate operations, and accounting. Students who select this route will be prepared for colourful careers as managers, accountants, and business owners. Students who select this route will be prepared for colorful careers as managers, accountants, and business owners. These ABM courses will equip them with the necessary industry know-how and skills to perform well in their professions and run their businesses smoothly.</p>
+                <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Designed to prepare students who are inclined to take college degrees related to business and management programs, taking ABM in senior high school will be about the basic principles of the various functional areas of business such as marketing, finance and accounting, information and technology, and entrepreneurship. The ABM strand is the perfect combination of practical skills and application, as well as shaping senior high school students to adopt the right mindset for crisis management and problem solving on the job and behind their businesses.</p>
+                </h5>
+                <br>
+                <br>
+                <h1><b>Possible College Courses Under the ABM Strand</b></h1>
+                <br>
+                <h5>
+                <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Senior high school graduates go on to pursue further studies with relevant ABM courses in college. Our program has a selection of expertly crafted ABM strand courses built to establish our students’ skills and knowledge to create foundation that shape them into world-class professionals. Take a look at some of the college courses under ABM strand and all the opportunities that await our students after graduation:</p>
+                <p>•Bachelor of Science in Accountancy <br>
+                •Bachelor of Science in Business Administration
+                </p>
+                <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>
+                <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>
+                </h5>
+                <h1><b>Possible Career Paths with the ABM Strand</b></h1>
+                <br>
+                <h5>
+                <p>Students enrolled in the ABM strand in senior high school can lead successful and highly competitive careers in the following professions:</p>
+                <p>•Entrepreneurs br
+                    •Advertising Professionals <br>
+                    •Marketing or Sales Representatives <br>
+                    •Accountants <br>
+                    •Account Managers <br>
+                    •Bank Tellers <br>
+                    •Restaurateurs <br>
+                    •Corporate Managers <br>
+                    •Retail Managers <br> 
+                    •Financial Advisers <br>
+                    •Economists
+                </p> 
+                </h5>
+
+
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p>Copyright ©️ 2024 All Rights Reserved By Jaru Pine Acuar</p>
+        <p><span style="font-size: 0.8em;"> jarupine@gmail.com</span></p>
+    </footer>
+
+    <script src="script.js"></script>
+
+    <script>
+        function toggleMenu() {
+            var navUl = document.querySelector('nav ul');
+            navUl.classList.toggle('show');
+        }
+
+        function showLogo(imageSrc) {
+            var modal = document.getElementById('logoModal');
+            var modalImage = document.getElementById('modalImage');
+            modalImage.src = imageSrc;
+            modal.style.display = 'flex';
+        }
+
+        function hideLogo() {
+            var modal = document.getElementById('logoModal');
+            modal.style.display = 'none';
+        }
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RNHS Login</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="icon" href="RNHS-LOGO.png" type="image/icon type">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="background-image"></div>
+    <div class="marquee">
+        <marquee behavior="scroll" direction="left" scrollamount="8">
+            WELCOME TO ROSALES NATIONAL SENIOR HIGH SCHOOL
+        </marquee>
+    </div>
+    <div class="container">
+        <div class="form-container" id="login-form-container">
+            <center><img src="RNHS-LOGO.png" alt="LOGO" class="logo"></center>
+            <h3 class="text-center mb-4">Login</h3>
+            <form id="login-form">
+                 <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="text" class="form-control" id="username" placeholder="Enter email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <div class="input-group">
+                        <input type="password" class="form-control" id="password" placeholder="Enter password" name="password" required>
+                        <div class="input-group-append">
+                            <button class="btn btn-outline-secondary" type="button" onclick="TogglePasswordVisibility('password')">
+                                <i class="fas fa-eye"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group form-check remember-me">
+                    <input type="checkbox" class="form-check-input" id="remember-me">
+                    <label class="form-check-label" for="remember-me">Remember me</label>
+                </div>
+                <button type="submit" class="btn btn-custom btn-block">Login</button>
+                <p class="text-center mt-2">Don't have an account? <a href="#" class="btn-link" onclick="showSignUpform()">Sign Up</a></p>
+            </form>
+        </div>
+
+        <div class="form-container signup-container" id="signup-form-container">
+              <center><img src="RNHS-LOGO.png" alt="LOGO" class="logo"></center>
+            <h3 class="text-center mb-4">Sign Up</h3>
+            <form id="signup-form">
+                <div class="form-group">
+                    <label for="username">Username</label>
+                    <input type="text" class="form-control" id="full-name" placeholder="Username" name="username" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" class="form-control" id="email" placeholder="Enter Email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="signup-password">Password</label>
+                    <div class="input-group">
+                        <input type="password" class="form-control" id="signup-password" placeholder="Enter password" name="password" required>
+                        <div class="input-group-append">
+                            <button class="btn btn-outline-secondary" type="button" onclick="TogglePasswordVisibility('signup-password')">
+                                <i class="fas fa-eye"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="confirm-password">Confirm Password</label>
+                    <div class="input-group">
+                        <input type="password" class="form-control" id="confirm-password" placeholder="Confirm password" name="confirm-password" required>
+                        <div class="input-group-append">
+                            <button class="btn btn-outline-secondary" type="button" onclick="TogglePasswordVisibility('confirm-password')">
+                                <i class="fas fa-eye"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="gender"><center>Gender</center></label>
+                    <div class="gender-container">
+                        <label for="male">
+                            <input type="radio" id="male" name="gender" value="male">
+                            Male
+                        </label>
+                        <label for="female">
+                            <input type="radio" id="female" name="gender" value="female">
+                            Female
+                        </label>
+                        <label for="other">
+                            <input type="radio" id="other" name="gender" value="other">
+                            Other
+                        </label>
+                    </div>
+                </div>
+                <button type="submit" class="btn btn-custom btn-block">Sign Up</button>
+                <p class="text-center mt-2">Already have an account? <a href="#" class="btn-link" onclick="showLoginform()">Login</a></p>
+            </form>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

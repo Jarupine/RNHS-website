@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rosales National High School - SHS</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="icon" href="RNHS-LOGO.png" type="image/icon type">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background-image: url('BACKGROUND.jpg');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            background-repeat: no-repeat;
+            color: white;
+            overflow-y: scroll; 
+        }
+
+        header {
+            background-color: #2B6CB3;
+            padding: 8px;
+            color: white;
+            text-align: center;
+            position: relative;
+            z-index: 2;
+        }
+
+        nav {
+            background-color: #2B6CB3;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px;
+            position: relative;
+            z-index: 3;
+        }
+
+        nav ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: white;
+            font-weight: bold;
+            margin: 0 10px;
+        }
+
+        .logout-container {
+            margin-left: auto;
+            padding-left: 50px;
+        }
+
+        .logout-container a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .logout-container a:hover {
+            text-decoration: underline;
+        }
+
+        .hamburger {
+            display: none;
+            cursor: pointer;
+            order: 1;
+            position: absolute;
+            animation: fadeInDown 0.5s ease-out;
+        }
+
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @media only screen and (max-width: 768px) {
+            .hamburger {
+                display: block;
+                order: 0;
+                left: 0;
+            }
+
+            nav ul {
+                display: none;
+                flex-direction: column;
+                background-color: #2B6CB3;
+                position: absolute;
+                top: 60px;
+                left: 0;
+                width: 100%;
+                text-align: center;
+            }
+
+            nav ul.show {
+                display: flex;
+            }
+        }
+
+        .main-content {
+            text-align: center;
+            margin: 50px; 
+            background-color: rgba(0, 0, 0, 0.5);
+            border-radius: 8px;
+            padding: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .main-content-wrapper {
+            opacity: 0;
+            animation: fadeInUp 1s ease-in-out forwards;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .main-picture {
+            max-width: 100%;
+            height: auto;
+            width: 200px;
+        }
+
+        .image-container {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 20px;
+        }
+
+        .main-content img {
+            max-width: 30%; 
+            border-radius: 8px;
+            margin-bottom: 10px;
+            animation: fadeInImage 1s ease-in-out;
+        }
+
+        @keyframes fadeInImage {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        .map-container {
+            margin-top: 20px;
+        }
+
+        footer {
+            background-color: #2B6CB3;
+            color: white;
+            text-align: center;
+            padding: 10px;
+            width: 100%;
+        }
+        
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="hamburger" onclick="toggleMenu()">
+            <i class="fas fa-bars"></i>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="acuar.html">Home</a></li>
+                <li><a href="About Us.html">About Us</a></li>
+                <li><a href="Events.html">Events</a></li>
+                <li><a href="News.html">News</a></li>
+                <li><a href="Strands.html">Strands</a></li>
+                <li><a href="facilities.html">Facilities and Staffs</a></li>
+                <li><a href="web developer.html">Web Developer</a></li>
+            </ul>
+            <div class="logout-container">
+                <a href="index.html">Log Out</a>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <div class="main-content-wrapper">
+            <div class="main-content">
+                <h1><b>Welcome to Rosales National High School - Senior High</b></h1>
+                <img src="RNHS-LOGO.png" alt="Main Picture" class="main-picture">
+                <div class="image-container">
+                    <img src="01.jpg" alt="Image 01">
+                    <img src="02.jpg" alt="Image 02">
+                    <img src="03.jpg" alt="Image 03">
+                </div>
+            </div>
+        </div>
+
+        <div class="map-container">
+            <p>Map of Rosales National High School:</p>
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d6465.650623236777!2d120.62764734687693!3d15.887125599316636!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x33913bddb873a57f%3A0x66fa1018e72b51d9!2sRosales%20National%20High%20School!5e1!3m2!1sen!2sph!4v1707221953224!5m2!1sen!2sph" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+    </main>
+
+    <footer>
+        <p>Copyright ©️ 2024 All Rights Reserved By Jaru Pine Acuar</p>
+        <p><span style="font-size: 0.8em;"> jarupine@gmail.com</span></p>
+    </footer>
+    
+    <script src="script.js"></script>
+
+    <script>
+        function toggleMenu() {
+            var navUl = document.querySelector('nav ul');
+            navUl.classList.toggle('show');
+        }
+    </script>
+</body>
+
+</html>

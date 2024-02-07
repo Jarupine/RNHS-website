@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rosales National High School - SHS </title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="icon" href="RNHS-LOGO.png" type="image/icon type">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background-image: url('BACKGROUND.jpg');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            background-repeat: no-repeat;
+            color: white;
+            overflow-y: scroll;
+        }
+
+        header {
+            background-color: #2B6CB3;
+            padding: 8px;
+            color: white;
+            text-align: center;
+            position: relative;
+            z-index: 2;
+        }
+
+        nav {
+            background-color: #2B6CB3;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px;
+            position: relative;
+            z-index: 3;
+        }
+
+        nav ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: white;
+            font-weight: bold;
+            margin: 0 10px;
+        }
+
+        .logout-container {
+            margin-left: auto;
+            padding-left: 50px;
+        }
+
+        .logout-container a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .logout-container a:hover {
+            text-decoration: underline;
+        }
+
+        .hamburger {
+            display: none;
+            cursor: pointer;
+            order: 1;
+            position: absolute;
+            animation: fadeInDown 0.5s ease-out;
+        }
+
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @media only screen and (max-width: 768px) {
+            .hamburger {
+                display: block;
+                order: 0;
+                left: 0;
+            }
+
+            nav ul {
+                display: none;
+                flex-direction: column;
+                background-color: #2B6CB3;
+                position: absolute;
+                top: 60px;
+                left: 0;
+                width: 100%;
+                text-align: center;
+            }
+
+            nav ul.show {
+                display: flex;
+            }
+        }
+
+        .main-content {
+            text-align: justify;
+            margin: 50px;
+            background-color: rgba(0, 0, 0, 0.5);
+            border-radius: 8px;
+            padding: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .main-content-wrapper {
+            opacity: 0;
+            animation: fadeInUp 1s ease-in-out forwards;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .main-picture {
+            max-width: 100%;
+            height: auto;
+            width: 200px;
+        }
+
+        .image-container {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 20px;
+        }
+
+        .main-content img {
+            max-width: 30%;
+            border-radius: 8px;
+            margin-bottom: 10px;
+            animation: fadeInImage 1s ease-in-out;
+        }
+
+        @keyframes fadeInImage {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        .map-container {
+            margin-top: 20px;
+        }
+
+        footer {
+            background-color: #2B6CB3;
+            color: white;
+            text-align: center;
+            padding: 10px;
+            width: 100%;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="hamburger" onclick="toggleMenu()">
+            <i class="fas fa-bars"></i>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="acuar.html">Home</a></li>
+                <li><a href="About Us.html">About Us</a></li>
+                <li><a href="Events.html">Events</a></li>
+                <li><a href="News.html">News</a></li>
+                <li><a href="Strands.html">Strands</a></li>
+                <li><a href="facilities.html">Facilities and Staffs</a></li>
+                <li><a href="web developer.html">Web Developer</a></li>
+            </ul>
+            <div class="logout-container">
+                <a href="index.html">Log Out</a>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <div class="main-content-wrapper">
+            <div class="main-content">
+                <img src="RNHS-LOGO.png" alt="Main Picture" class="main-picture">
+                <br>
+                <br>
+                <h1><b>DEPED MANDATE,VISION, MISSION AND CORE VALUES</b></h1>
+                <br>
+                <br>
+                <h1><b>Our Mandate</b></h1>
+                <br>
+                <br>
+                <h5>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;The Department of Education was established through the Education Decree of 1863 as the Superior Commission of Primary Instruction under a Chairman. The Education agency underwent many reorganization efforts in the 20th century in order to better define its purpose vis a vis the changing administrations and charters. The present day Department of Education was eventually mandated through Republic Act 9155, otherwise known as the Governance of Basic Education act of 2001 which establishes the mandate of this agency.</h5>
+                <h5>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;The Department of Education (DepEd) formulates, implements, and coordinates policies, plans, programs and projects in the areas of formal and non-formal basic education. It supervises all elementary and secondary education institutions, including alternative learning systems, both public and private; and provides for the establishment and maintenance of a complete, adequate, and integrated system of basic education relevant to the goals of national development.</h5>
+                <br>
+                <br>
+                <br>
+                <h1><b>The DepEd Vision</b></h1>
+                <br>
+                <center>
+                <h4>
+                    We dream of Filipinos <br>
+                    who passionately love their country <br>
+                    and whose values and competencies <br>
+                    enable them to realize their full potential <br>
+                    and contribute meaningfully to building the nation. <br>
+                    As a learner-centered public institution, <br>
+                    the Department of Education continuously improves itself to better serve <br>
+                    its stakeholders.
+                </h4>
+                </center>
+                <br>
+                <br>
+                <br>
+                <h1><b>The DepEd Mision</b></h1>
+                <br>
+                <br>
+                <h4>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;To protect and promote the right of every Filipino to quality, equita ble, culture-based, and complete basic education where: Students learn in a child-friendly, gender-sensitive, safe, and moti vating environment. Teachers facilitate learning and constantly nurture every learner. Administrators and staff, as stewards of the institution, en an enabling and supportive environment for effective learning to hap pen. Family, community, and other stakeholders are actively engaged and share responsibility for developing life-long learners.</h4>
+                <br>
+                <br>
+                <br>
+                <h1><b>Our Core Values</b></h1>
+                <br>
+                <h4><i>Maka-Diyos</i></h4>
+                <h4><i>Maka-tao</i></h4>
+                <h4><i>Makakalikasan</i></h4>
+                <h4><i>Makakabansa</i></h4>
+                <br>
+                <br>
+                <br>
+                <br>
+                <h1><b>THE CREATION OF ROSALES NATIONAL HIGH SCHOOL</b></h1>
+                <br>
+                <br>
+                <h5>
+                <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;The Rosales National High School which caters to secondary school youths of Rosales and its neighboring towns, Rosales National High School was founded in 1945 through the initiative of public school officials and prominent and civic-spirited of the town, namely: the late Mayor Felix Coloma, Dona Petra Callanta, Don Francisco delos Reyes. Don Isidro Casanova, Don Conrado Estrella Sr. In September 1945, the school then known as Rosales Junior High School has under each educational wing the first-year students in 1941 that were overtaken by the outbreak of the Pacific war in World War II on December 8, 1941. The freshmen and sophomore classes were housed temporarily in the Plaridel College Building.</p>
+                <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;From Plaridel College. the school was transferred to another site which is currently occupied by the Rosales North Central School where Quonset Buildings vacated by the American Soldiers were then used as classrooms.</p>
+                <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;While classes were going on, the founding fathers and the PTA ne gotiated for the purchased of a permanent site, meticulously chosen be cause of its healthful environment that is conducive to learning, more foot age to futuristic expansion and its ideal location in terms of proximity to the main thoroughfares of the town.</p>
+                <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Assured of the funds, the PTA Board of Directors negotiated with the heirs of the late Mr. Alejandro Pablo regarding the contemplated purchase of his lot situated in the Poblacion of Rosales.</p>
+                <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;The new site has an area of 72, 634 square meterS under title 22452 registered on February 9, 1957 under TCT No. 1029. It cost the PTA Php 50,843.20 as down payment to acquire the cogonal land.</p>
+                <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;In S.Y 1946-1947, the PTA was determined to transfer the school to the chosen site. For donations of parents and civic spirited citizens, shacks were constructed and were furnished by the facilities of the Plaridel College donated by Dona Teodora Serafica and family. In this school site were enrolled 51 fourth year students and 200 first year students. The first class of 32 males and 16 females were graduated.</p>
+                <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;As time goes by, there are so many changes happened in the school in terms of the buildings, curricula, number of teachers and number of stu dents.Currently, the total number of enrollees in school is about 5,151 as of march 4, 2018. In that case the Rosales NHS is one of the biggest Na tional High School in the Division of Pangasinan II.</p>
+                <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;In terms of acquisition of learning, before it is only a matter of learning, just giving the ideas to the learners in order for them to internal ized on what is going on and on what will be in the next generation but to day, it is not just a ingesting of ideas but it is more one practical matter, the of learning today is more on hands-on-minds-on process it focusses on out come based wherein in all things that they have learned must put into action.</p>
+                </h5>
+                <br>
+                <br>
+                <br> 
+                <center>
+                <h1><b>FORMER SCHOOL PRINCIPALS</b></h1>
+                <br>
+                <h5>Mr. Isidro Fabia <br>
+                    1945-1947
+                </h5>
+                <br>
+                <h5>Dr. Mauricio Origines <br>
+                    1947-1954
+                </h5>
+                <br>
+                <h5>Mr. Esteban Dalope <br>
+                    1954-1963
+                </h5>
+                <br>
+                <h5>Mr. Antonio N. Rosete <br>
+                    1963-1980
+                </h5>
+                <br>
+                <h5>Mrs. Maria N. Monje <br>
+                    1980-1997
+                </h5>
+                <br>
+                <h5>Mrs Paulina M. Gadia (OIC) <br>
+                    April-July 1992
+                </h5>
+                <br>
+                <h5>Mrs Veronica Almaeda P. Dominguez <br>
+                    1997- November 20,2006
+                </h5>
+                <br>
+                <h5>Mrs Edna M. Maala (OIC) <br>
+                    April 18,2017- October 14, 2017
+                </h5>
+                <br>
+                <h5>Mr. Miguelito L. Luna <br>
+                    November 23,2006- February 17, 2023
+                </h5>
+                <br>
+                </center>
+                <br>
+                <br>
+                <br>
+                <h1><b>ROSALES NATIONAL HIGH SCHOOL PRINCIPAL 2023-2024</b></h1>
+                <img src="PRINCIPAL-PICTURE.png">
+                <h5>Rowena Lea G. Moreno, PhD</h5>
+                <h5>Principal IV</h5>
+                <br>
+                <br>
+                <br>
+                <h1><b>ROSALES NATIONAL HIGH SCHOOL ALMA MATER SONG</b></h1>
+                <br>
+                <h2>
+                <h5>Hail, Beloved Alma Mater</h5>
+                <h5>Seat of our youthful days</h5>
+                <h5>Light of the young and the brave</h5>
+                <h5>Fountain of wisdom and knowledge,</h5>
+                <h5>Wherein the fields of life we are</h5>
+                <h5>Amidst defeat or victory</h5>
+                <h5>Thy name we shall hold high</h5>
+                <h5>Singing our praise unto thee</h5>
+                <h5>Hail Beloved Alma Mater</h5>
+                <h5>The Rosales National High School</h5>
+                <h5>To thee we give and pledge our unstinted loyalty</h5>
+                </h2>
+            </div>
+        </div>
+    </main>
+
+    
+
+    <footer>
+        <p>Copyright ©️ 2024 All Rights Reserved By Jaru Pine Acuar</p>
+        <p><span style="font-size: 0.8em;"> jarupine@gmail.com</span></p>
+    </footer>
+
+    <script src="script.js"></script>
+
+    <script>
+        function toggleMenu() {
+            var navUl = document.querySelector('nav ul');
+            navUl.classList.toggle('show');
+        }
+    </script>
+
+</body>
+
+</html>
